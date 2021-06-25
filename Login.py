@@ -41,17 +41,16 @@ class Login():
         validarUsuario = input("Ingrese su nombre para iniciar sesión: ")
         validarContrasena = input("Ingrese su contraseña para iniciar sesión: ")
         
-        for iniciarSesion in baseDatos.values():
-            print(iniciarSesion)
+            
+        if validarUsuario == baseDatos["usuario"] and validarContrasena == baseDatos["contraseña"]:
+            print("usuario correcto y contraseña correcta!")
+        else:
+            print("Error")
             
         
         
         
-            
         
-        
-        
-        
-ventanaEntrar = Login()
-ventanaEntrar.Registrar(input("Ingrese su nombre para registrarlo: "),input("Vuelva a ingresar su nombre para validar su registrado: "),
+logged = Login()
+logged.Registrar(input("Ingrese su nombre para registrarlo: "),input("Vuelva a ingresar su nombre para validar su registrado: "),
                         input("Ingrese su contraseña para registrarla: "),input("Vuelva a confirmar su contraseña registrada: "))
