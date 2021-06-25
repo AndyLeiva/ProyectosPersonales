@@ -14,6 +14,11 @@ cursor = conexion.cursor()
 #cursor.execute("CREATE TABLE IF NOT EXISTS usuarios "\
     #"(usuario VARCHAR(100), contrasena VARCHAR(100))")
 
-conexion.commit()
+
+def insertarDatos(usuario,contrasena):    
+    cursor.execute("INSERT INTO usuarios VALUES (?,?)",(usuario, contrasena))
+
+    conexion.commit()
+insertarDatos(input("USUARIO: "),input("CONTRASEÑA: "))
 
 conexion.close()
