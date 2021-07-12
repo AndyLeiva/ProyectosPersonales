@@ -15,6 +15,7 @@ conexion = sqlite3.connect("Login.db")
 def registrar():
     #Conexion con la Base de datos
     cursor1 = conexion.cursor()
+    
     listaDatos = [valorUsuario.get(), valorContrasena.get()]
     #listaContrasena = [valorContrasena.get()]
     
@@ -31,6 +32,7 @@ def registrar():
 valorUsuario = StringVar()
 valorContrasena = StringVar()
 
+
 #Etiquetas
 etiquetaUsuario = Label(root, text="Escribe el Usuario: ")
 etiquetaUsuario.place(x=10, y=50)
@@ -41,6 +43,7 @@ etiquetaContrasena.place(x=10, y=100)
 #Cajas de texto
 cajaUsuario = Entry(root, textvariable=valorUsuario)
 cajaUsuario.place(x=180, y=50)
+
 cajaContrasena = Entry(root, textvariable=valorContrasena)
 cajaContrasena.place(x=180, y=100)
 
