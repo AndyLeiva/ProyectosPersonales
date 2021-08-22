@@ -21,7 +21,7 @@ print(listaProductos[3])
 print(listaProductos[4])
 print(listaProductos[5])
 print(listaProductos[6])
-
+print(listaProductos[7])
 print("**********************")
 
 print ("Gracias compañeritos por poner atencion y que la fuerza los acompañe")
