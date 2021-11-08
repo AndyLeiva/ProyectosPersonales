@@ -72,6 +72,16 @@ def leerFilas():
     conexion.close()
     print("TABLA ESTUDIANTES\n",datos)
 
+def buscarDatos(cedula):
+    conexion = sql.connect("Estudiantes.db")
+    cursor = conexion.cursor()
+    instruccion = f"SELECT * FROM Estudiantes WHERE cedula = {cedula}"
+    cursor.execute(instruccion)
+    datos = cursor.fetchall()
+    conexion.commit()
+    conexion.close()
+    print("ESTUDIANTE:\n",datos)
+
 
 #funcion de registrar el estudiante
 # crear una tabla para los datos del estudiante y otra tabla donde guarda el registra la entrada del estudiante al comedor.
@@ -86,6 +96,7 @@ def leerFilas():
 # 3-registar el estudiante para la hora de almuerzo "register" por medio de la cedula
 # 4-Salir "exit"
 
+# crear una funcion que extraiga los datos de la tabla estudiantes y los inserte en la tabla registro segun la cedula
 
 
 if __name__ == "__main__":
@@ -94,7 +105,7 @@ if __name__ == "__main__":
     #crearTabla()
 
 
-    #cedula = int(input("Cedula:"))
+    cedula = int(input("Cedula:"))
     #nombre = input("Nombre: ")
     #seccion = input("Seccion: ")
     #fecha = time.strftime("%x")
@@ -105,4 +116,5 @@ if __name__ == "__main__":
     #insertarRegistros(cedula, nombre, seccion, fecha, hora) # tabla registros
     #insertardatos(cedula, nombre, seccion) # tabla estudiantes
 
-    leerFilas()
+    #leerFilas()
+    buscarDatos(cedula)
