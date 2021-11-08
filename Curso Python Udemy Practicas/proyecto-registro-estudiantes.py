@@ -10,6 +10,11 @@ while cedula not in bd.keys():
 
 print("El estudiante: ", bd[cedula])
 
-print("Fecha: ", time.strftime("%x"))
-print("Hora: ", time.strftime("%X"))
+#print("Fecha: ", time.strftime("%x"))
+#print("Hora: ", time.strftime("%X"))
 
+fecha = time.strftime("%x")
+hora = time.strftime("%X")
+
+print(fecha)
+print(hora)
